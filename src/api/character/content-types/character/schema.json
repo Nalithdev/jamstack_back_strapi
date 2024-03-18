@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "characters",
+  "info": {
+    "singularName": "character",
+    "pluralName": "characters",
+    "displayName": "character",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "age": {
+      "type": "biginteger"
+    },
+    "race": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "nationality": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::nation.nation",
+      "inversedBy": "characters"
+    }
+  }
+}
