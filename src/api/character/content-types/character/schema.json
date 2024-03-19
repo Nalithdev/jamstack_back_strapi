@@ -36,6 +36,10 @@
       "relation": "manyToOne",
       "target": "api::nation.nation",
       "inversedBy": "characters"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

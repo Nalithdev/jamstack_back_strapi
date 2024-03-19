@@ -809,6 +809,7 @@ export interface ApiCharacterCharacter extends Schema.CollectionType {
       'manyToOne',
       'api::nation.nation'
     >;
+    slug: Attribute.UID<'api::character.character', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
