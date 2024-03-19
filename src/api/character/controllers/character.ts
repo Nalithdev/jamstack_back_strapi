@@ -11,7 +11,7 @@ export default factories.createCoreController('api::character.character', ({ str
       where : { slug:id },
       populate: ['image', 'nation']
     })
-    const sanitizedEntity = await this.sansitizeOutput(entity, ctx)
+    const sanitizedEntity = await this.sanitizeOutput(entity, ctx)
     return this.transformResponse(sanitizedEntity)
   }
 }));
