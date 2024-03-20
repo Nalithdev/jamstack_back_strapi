@@ -804,12 +804,12 @@ export interface ApiCharacterCharacter extends Schema.CollectionType {
     age: Attribute.BigInteger;
     race: Attribute.String;
     image: Attribute.Media;
-    nationality: Attribute.Relation<
+    slug: Attribute.UID<'api::character.character', 'name'>;
+    nation: Attribute.Relation<
       'api::character.character',
       'manyToOne',
       'api::nation.nation'
     >;
-    slug: Attribute.UID<'api::character.character', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -832,13 +832,14 @@ export interface ApiNationNation extends Schema.CollectionType {
   info: {
     singularName: 'nation';
     pluralName: 'nations';
-    displayName: 'nation';
+    displayName: 'Nation';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.Text & Attribute.Required & Attribute.Unique;
     characters: Attribute.Relation<
       'api::nation.nation',
       'oneToMany',

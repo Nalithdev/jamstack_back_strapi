@@ -31,15 +31,15 @@
         "images"
       ]
     },
-    "nationality": {
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "nation": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::nation.nation",
       "inversedBy": "characters"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
     }
   }
 }

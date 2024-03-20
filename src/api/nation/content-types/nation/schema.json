@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nation",
     "pluralName": "nations",
-    "displayName": "nation"
+    "displayName": "Nation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,15 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
-      "unique": true,
-      "required": true
+      "type": "text",
+      "required": true,
+      "unique": true
     },
     "characters": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::character.character",
-      "mappedBy": "nationality"
+      "mappedBy": "nation"
     }
   }
 }
